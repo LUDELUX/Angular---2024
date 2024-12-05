@@ -12,3 +12,4 @@ IDE and editor files
 .vscode/
 .idea/
 .eslintcache
+Postman-Agent-win64-0.4.33-Setup.exe
