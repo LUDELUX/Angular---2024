@@ -1,0 +1,28 @@
+<div class="champion-detail">
+  <h2>{{ champion?.name }} - Details</h2>
+
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="champion">
+    <div class="champion-photo">
+      <img [src]="champion?.photo" alt="{{ champion?.name }}" />
+    </div>
+
+    <div class="champion-info">
+      <h3>Role: {{ champion?.role }}</h3>
+      <p>Position: {{ champion?.position }}</p>
+      <p>Location: {{ champion?.location }}</p>
+
+      <h4>Ratings</h4>
+      <ul>
+        <li *ngFor="let rating of champion.ratings">
+          <strong>User {{ rating.userId }}</strong>: {{ rating.rating }} stars
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

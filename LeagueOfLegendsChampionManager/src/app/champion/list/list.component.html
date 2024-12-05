@@ -1,0 +1,24 @@
+<div class="champion-list">
+  <h2>Champion List</h2>
+
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="champions?.length === 0" class="no-champions">
+    <p>No champions found.</p>
+  </div>
+
+  <div *ngIf="champions?.length > 0">
+    <div *ngFor="let champion of champions" class="champion-item">
+      <img [src]="champion.photo" alt="{{ champion.name }}" class="champion-photo" />
+      <div class="champion-info">
+        <h3>{{ champion.name }}</h3>
+        <p>Role: {{ champion.role }}</p>
+        <p>Position: {{ champion.position }}</p>
+      </div>
+    </div>
+  </div>
+</div>

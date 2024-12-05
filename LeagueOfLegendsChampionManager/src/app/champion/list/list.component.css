@@ -1,0 +1,39 @@
+.champion-list {
+  padding: 20px;
+}
+
+.champion-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.champion-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.champion-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.champion-info p {
+  margin: 5px 0;
+  color: gray;
+}
+
+.loading {
+  font-size: 18px;
+  color: #00f;
+}
+
+.error {
+  color: red;
+}
+
+.no-champions {
+  color: #666;
+}

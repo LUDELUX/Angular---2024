@@ -1,0 +1,45 @@
+.champion-detail {
+  padding: 20px;
+}
+
+.champion-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.champion-info {
+  margin-top: 20px;
+}
+
+.champion-info h3 {
+  font-size: 24px;
+}
+
+.champion-info p {
+  font-size: 18px;
+  color: #666;
+}
+
+h4 {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.loading {
+  font-size: 18px;
+  color: #00f;
+}
+
+.error {
+  color: red;
+}
