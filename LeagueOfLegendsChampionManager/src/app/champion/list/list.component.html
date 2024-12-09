@@ -11,7 +11,7 @@
     <p>No champions found.</p>
   </div>
 
-  <div *ngIf="champions?.length > 0">
+  <div *ngIf="champions.length > 0">
     <div *ngFor="let champion of champions" class="champion-item">
       <img [src]="champion.photo" alt="{{ champion.name }}" class="champion-photo" />
       <div class="champion-info">

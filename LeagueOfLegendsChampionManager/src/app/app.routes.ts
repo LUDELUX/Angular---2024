@@ -8,6 +8,7 @@ import { ErrorMsgComponent } from './core/error-msg/error-msg.component';
 
 import { ChampionListComponent } from './champion/list/list.component';
 import { ChampionDetailComponent } from './champion/detail/detail.component';
+import { CreateChampionComponent } from './champion/create/create.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,14 +20,18 @@ export const routes: Routes = [
 
   {
     path: 'champions',
-    component: ChampionListComponent,  
+    component: ChampionListComponent,
   },
   {
     path: 'champions/:id',
-    component: ChampionDetailComponent,  
+    component: ChampionDetailComponent,
+  },
+  {
+    path: 'createChampion',
+    component: CreateChampionComponent,
   },
 
   { path: 'error', component: ErrorMsgComponent },
   { path: '404', component: PageNotFoundComponent },
-  { path: '**', redirectTo: '/404' }, 
+  { path: '**', redirectTo: '/404' },
 ];

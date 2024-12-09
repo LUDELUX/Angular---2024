@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Champion } from './types/champion';
@@ -23,7 +23,6 @@ export class ApiService {
   createChampion(champion: Champion): Observable<Champion> {
     return this.http.post<Champion>(`${this.apiUrl}/champions`, champion);
   }
-
   updateChampion(championId: string, champion: Champion): Observable<Champion> {
     return this.http.put<Champion>(`${this.apiUrl}/champions/${championId}`, champion);
   }

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const users = require('./users');
-const champions = require('./champions');
+const champions = require('./championRouter');
 const { authController } = require('../controllers');
 
 router.post('/register', authController.register);

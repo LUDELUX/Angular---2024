@@ -6,7 +6,7 @@ import { ApiService } from '../../api.service';
 @Component({
   selector: 'app-champion-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css'],
+  styleUrls: ['./detail.component.css']
 })
 export class ChampionDetailComponent implements OnInit {
   champion: Champion | null = null;
