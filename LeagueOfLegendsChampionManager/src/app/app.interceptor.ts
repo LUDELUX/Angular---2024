@@ -21,6 +21,8 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError((err) => {
+      console.error('API Error:', err);
+
       if (err.status === 401) {
         router.navigate(['/login']);
       } else {
@@ -32,3 +34,4 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
     })
   );
 };
+

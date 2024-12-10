@@ -1,23 +1,17 @@
 <div class="champion-list">
-  <h2>Champion List</h2>
-
-  <div *ngIf="isLoading" class="loading">Loading...</div>
+  <h2>Champions</h2>
 
   <div *ngIf="errorMessage" class="error">
     <p>{{ errorMessage }}</p>
   </div>
 
-  <div *ngIf="champions?.length === 0" class="no-champions">
-    <p>No champions found.</p>
-  </div>
-
-  <div *ngIf="champions.length > 0">
-    <div *ngFor="let champion of champions" class="champion-item">
+  <div class="champion-cards">
+    <div *ngFor="let champion of champions" class="champion-card">
       <img [src]="champion.photo" alt="{{ champion.name }}" class="champion-photo" />
       <div class="champion-info">
         <h3>{{ champion.name }}</h3>
-        <p>Role: {{ champion.role }}</p>
-        <p>Position: {{ champion.position }}</p>
+        <p>{{ champion.position }}</p>
+        <button [routerLink]="['/champion', champion._id]">View Details</button>
       </div>
     </div>
   </div>

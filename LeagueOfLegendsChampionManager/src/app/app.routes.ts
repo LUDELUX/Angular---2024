@@ -18,18 +18,9 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
 
-  {
-    path: 'champions',
-    component: ChampionListComponent,
-  },
-  {
-    path: 'champions/:id',
-    component: ChampionDetailComponent,
-  },
-  {
-    path: 'createChampion',
-    component: CreateChampionComponent,
-  },
+  { path: 'champions', component: ChampionListComponent },
+  { path: 'createChampion', component: CreateChampionComponent },
+  { path: 'champion/:id', component: ChampionDetailComponent },
 
   { path: 'error', component: ErrorMsgComponent },
   { path: '404', component: PageNotFoundComponent },

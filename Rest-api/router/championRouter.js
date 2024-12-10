@@ -7,8 +7,7 @@ router.get('/', championController.getAllChampions);
 router.get('/:id', championController.getChampionById);
 
 router.post('/', championController.createChampion);
-router.put('/:id',  auth(), championController.editChampion);
-router.delete('/:id',  auth(), championController.deleteChampion);
-router.post('/:id/rate',  auth(), championController.rateChampion);
+router.put('/:id',  championController.updateChampion);
+router.delete('/:id', championController.deleteChampion);
 
 module.exports = router;

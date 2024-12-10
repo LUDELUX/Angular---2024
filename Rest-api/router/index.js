@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const users = require('./users');
 const champions = require('./championRouter');
-const { authController } = require('../controllers');
+const { authController, } = require('../controllers');
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);

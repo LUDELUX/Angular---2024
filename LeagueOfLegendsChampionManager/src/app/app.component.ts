@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { MainComponent } from './main/main.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { MainComponent } from './main/main.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
   imports: [
     RouterOutlet,
     HeaderComponent,
+    MainComponent,
     FooterComponent,
     AuthenticateComponent,
   ],

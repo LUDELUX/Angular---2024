@@ -1,41 +1,90 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Champion } from '../../types/champion';
 import { ApiService } from '../../api.service';
+import { Champion } from '../../types/champion';
+import { UserService } from '../../user/user.service';
 
 @Component({
   selector: 'app-champion-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  styleUrls: ['./detail.component.css'],
 })
 export class ChampionDetailComponent implements OnInit {
   champion: Champion | null = null;
-  isLoading = false;
-  errorMessage: string | null = null;
+  isModalOpen: boolean = false;
+  isLoggedIn: boolean = false;
 
   constructor(
     private apiService: ApiService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userService: UserService 
   ) {}
 
   ngOnInit(): void {
-    const championId = this.route.snapshot.paramMap.get('championId')!;
-    this.fetchChampionDetail(championId);
+    this.loadChampion();
+    this.checkLoginStatus();
   }
 
-  fetchChampionDetail(championId: string): void {
-    this.isLoading = true;
-    this.errorMessage = null;
+  loadChampion(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.apiService.getChampionDetail(id).subscribe(
+        (champion) => {
+          this.champion = champion;
+        },
+        (error) => {
+          console.error('Error loading champion:', error);
+        }
+      );
+    }
+  }
 
-    this.apiService.getChampionDetail(championId).subscribe(
-      (data) => {
-        this.champion = data;
-        this.isLoading = false;
+  checkLoginStatus(): void {
+    this.userService.getProfile().subscribe({
+      next: () => {
+        this.isLoggedIn = true;
       },
-      (error) => {
-        this.errorMessage = 'An error occurred while fetching champion details.';
-        this.isLoading = false;
-      }
-    );
+      error: () => {
+        this.isLoggedIn = false;
+      },
+    });
+  }
+
+  openEditModal(): void {
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+  }
+
+  onSaveChampion(updatedChampion: Champion): void {
+    if (this.champion && this.champion._id) {
+      this.apiService.updateChampion(this.champion._id, updatedChampion).subscribe(
+        (updatedChampion) => {
+          this.champion = updatedChampion;
+          this.loadChampion();
+          this.closeModal();
+        },
+        (error) => {
+          console.error('Error updating champion:', error);
+        }
+      );
+    } else {
+      console.error('Champion ID is missing');
+    }
+  }
+
+  deleteChampion(): void {
+    if (this.champion && this.champion._id) {
+      this.apiService.deleteChampion(this.champion._id).subscribe(
+        () => {
+          alert('Champion deleted successfully');
+        },
+        (error) => {
+          console.error('Error deleting champion:', error);
+        }
+      );
+    }
   }
 }

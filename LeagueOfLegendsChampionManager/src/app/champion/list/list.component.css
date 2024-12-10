@@ -1,39 +1,106 @@
 .champion-list {
+  max-width: 1200px;
+  margin: 30px auto;
   padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.champion-item {
-  display: flex;
-  align-items: center;
+.champion-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.champion-list .error {
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
-.champion-photo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
+.champion-list .champion-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.champion-info h3 {
-  margin: 0;
+.champion-list .champion-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.champion-list .champion-photo {
+  width: 100%; 
+  height: 200px;
+  object-fit: cover; 
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.champion-list .champion-info {
+  padding: 10px;
+}
+
+.champion-list .champion-info h3 {
   font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.champion-info p {
-  margin: 5px 0;
-  color: gray;
+.champion-list .champion-info p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
 }
 
-.loading {
-  font-size: 18px;
-  color: #00f;
+.champion-list .champion-info button {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.error {
-  color: red;
+.champion-list .champion-info button:hover {
+  background-color: #357ab7;
 }
 
-.no-champions {
-  color: #666;
+.champion-list .champion-info button:focus {
+  outline: none;
+}
+
+.champion-list .champion-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .champion-list .champion-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .champion-list .champion-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .champion-list .champion-cards {
+    grid-template-columns: 1fr;
+  }
 }

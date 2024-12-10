@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getChampions(): Observable<Champion[]> {
+  getAllChampions(): Observable<Champion[]> {
     return this.http.get<Champion[]>(`${this.apiUrl}/champions`);
   }
 
@@ -23,11 +23,12 @@ export class ApiService {
   createChampion(champion: Champion): Observable<Champion> {
     return this.http.post<Champion>(`${this.apiUrl}/champions`, champion);
   }
+  
   updateChampion(championId: string, champion: Champion): Observable<Champion> {
     return this.http.put<Champion>(`${this.apiUrl}/champions/${championId}`, champion);
   }
 
-  deleteChampion(championId: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/champions/${championId}`);
+  deleteChampion(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/champions/${id}`);
   }
 }
