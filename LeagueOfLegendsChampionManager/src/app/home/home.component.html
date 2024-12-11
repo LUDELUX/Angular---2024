@@ -1,15 +1,12 @@
 <div class="container">
-  <div class="container">
-    <div class="welcome">
-      <h3>Welcome!</h3>
-      <p>
-        SoftUni forum is a place, where you can post your questions, comment,
-        and discuss problems, which you have in your programming language or in
-        your study in SoftUni.
-      </p>
+  <div class="welcome">
+    <h1>Welcome to League of Legends Fan Site!</h1>
+    <p>
+      Join the discussion, share your favorite champions, and explore strategies with fellow summoners.
+    </p>
 
-      @if(!isLoggedIn) {
-      <div class="logged">
+    <div *ngIf="!isLoggedIn">
+      <div class="auth-links">
         <ul>
           <li>
             <a routerLink="/login">
@@ -25,7 +22,6 @@
           </li>
         </ul>
       </div>
-      }
     </div>
   </div>
 </div>

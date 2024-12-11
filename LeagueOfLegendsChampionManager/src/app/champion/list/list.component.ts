@@ -20,7 +20,10 @@ export class ChampionListComponent implements OnInit {
   loadChampions(): void {
     this.apiService.getAllChampions().subscribe(
       (champions) => {
-        this.champions = champions;
+        this.champions = champions.map((champion) => ({
+          ...champion,
+          likes: champion.likes || 0, // Initialize likes property to 0 if undefined
+        }));
         this.errorMessage = null;
       },
       (error) => {
@@ -28,5 +31,9 @@ export class ChampionListComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  likeChampion(champion: Champion): void {
+    champion.likes = (champion.likes || 0) + 1;
   }
 }

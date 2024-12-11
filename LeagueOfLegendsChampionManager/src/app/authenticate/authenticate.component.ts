@@ -5,12 +5,13 @@ import { LoaderComponent } from '../shared/loader/loader.component';
 @Component({
   selector: 'app-authenticate',
   standalone: true,
-  imports: [LoaderComponent, LoaderComponent],
+  imports: [LoaderComponent],
   templateUrl: './authenticate.component.html',
-  styleUrl: './authenticate.component.css',
+  styleUrls: ['./authenticate.component.css'],
 })
 export class AuthenticateComponent implements OnInit {
-  isAuthenticating = true;
+  isAuthenticating = true; // Loader state
+  showRegister = false;    // Controls which form is visible
 
   constructor(private userService: UserService) {}
 
@@ -26,5 +27,9 @@ export class AuthenticateComponent implements OnInit {
         this.isAuthenticating = false;
       },
     });
+  }
+
+  toggleForm() {
+    this.showRegister = !this.showRegister; // Toggle between Login and Register
   }
 }

@@ -1,21 +1,21 @@
-/* welcome component */
+/* Welcome component */
 
 .welcome {
-  padding: 0.5em 1em;
+  padding: 1em 2em;
   border: 1px solid #999;
   border-radius: 0.5em;
-  font-size: 0.9em;
-  margin-top: 1em;
-  background-color: #e4e3e3; /* Matches body background */
+  font-size: 1em;
+  margin-top: 1.5em;
+  background-color: #f4f4f4; /* Matches body background */
 }
 
 .welcome h3 {
   background-color: #234465;
   color: white;
-  text-shadow: 1px 1px rgb(43, 42, 42);
+  text-shadow: 1px 1px rgba(43, 42, 42, 0.7);
   border-radius: 0.5em;
   width: 100%;
-  padding: 0.5em 1.2em;
+  padding: 0.7em 1.5em;
   text-align: center;
 }
 
@@ -29,14 +29,14 @@
 .welcome a {
   color: white;
   text-decoration: none;
-  background-color: #ff9f00;
+  background-color: #0091ff;
   border: none;
   border-radius: 0.5em;
-  padding: 0.5em 2em;
+  padding: 0.6em 2.5em;
   margin: 1em;
   display: inline-block;
   text-align: center;
-  text-shadow: 1px 1px rgb(87, 86, 86);
+  text-shadow: 1px 1px rgba(87, 86, 86, 0.8);
   transition: transform 0.3s ease;
 }
 

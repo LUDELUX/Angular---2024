@@ -1,5 +1,5 @@
 header {
-  background-color: #234465;
+  background-color: #0b42cd;
   padding: 20px 0;
   color: white;
 }
@@ -48,7 +48,7 @@ header {
 }
 
 .main-nav li {
-  background-color: #ff9f00;
+  background-color: #0091ff;
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -73,7 +73,7 @@ header {
 }
 
 .user-nav li {
-  background-color: #ff9f00;
+  background-color: #0091ff;
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

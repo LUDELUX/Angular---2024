@@ -12,7 +12,14 @@
         <h3>{{ champion.name }}</h3>
         <p>{{ champion.position }}</p>
         <button [routerLink]="['/champion', champion._id]">View Details</button>
+
+        <!-- Like button -->
+        <div class="like-section">
+          <button (click)="likeChampion(champion)">Like</button>
+          <span>{{ champion.likes }} likes</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
+e
